@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Hindi Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        <section class="translator-card">
+            <div class="icon">🌐</div>
+            <p class="eyebrow">SIMPLE • FAST • FREE</p>
+            <h1>English to Hindi<br><span>Translator</span></h1>
+            <p class="subtitle">Write an English sentence and translate it into Hindi.</p>
+
+            <form method="POST">
+                <label for="sentence">Your English sentence</label>
+                <textarea id="sentence" name="sentence" rows="4"
+                    placeholder="Example: Good morning, how are you?">{{ sentence }}</textarea>
+                <button type="submit">Translate to Hindi <span>→</span></button>
+            </form>
+
+            {% if translation %}
+            <section class="result" aria-live="polite">
+                <p class="result-label">HINDI TRANSLATION</p>
+                <p class="translated-text">{{ translation }}</p>
+                <button type="button" class="copy-button" onclick="copyTranslation()">Copy translation</button>
+            </section>
+            {% endif %}
+
+            {% if error %}
+            <p class="error" role="alert">{{ error }}</p>
+            {% endif %}
+
+            <p class="footer">Powered by MyMemory Translator</p>
+        </section>
+    </main>
+    <script>
+        function copyTranslation() {
+            const text = {{ translation | tojson }};
+            if (text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const button = document.querySelector(".copy-button");
+                    button.textContent = "Copied!";
+                    setTimeout(() => button.textContent = "Copy translation", 1500);
+                }).catch(() => alert("Could not copy automatically. Please select and copy the translation."));
+            }
+        }
+    </script>
+</body>
+</html>

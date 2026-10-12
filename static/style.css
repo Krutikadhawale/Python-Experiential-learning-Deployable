@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff, #f5e8ff, #ffe4ef);
+    color: #1f2340;
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 16px;
+}
+
+.translator-card {
+    width: 100%;
+    max-width: 620px;
+    padding: 38px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 26px;
+    box-shadow: 0 24px 70px rgba(65, 52, 130, 0.16);
+}
+
+.icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    background: #eeebff;
+    border-radius: 18px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.eyebrow, .result-label {
+    color: #6c55d9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 43px);
+    line-height: 1.12;
+    margin: 10px 0 14px;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: #6c55d9;
+}
+
+.subtitle {
+    color: #74758b;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 112px;
+    border: 1px solid #deddf0;
+    border-radius: 14px;
+    padding: 15px;
+    font: inherit;
+    line-height: 1.5;
+    outline: none;
+    background: #fbfaff;
+}
+
+textarea:focus {
+    border-color: #8b78ed;
+    box-shadow: 0 0 0 3px rgba(139, 120, 237, 0.14);
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+form > button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px 18px;
+    color: white;
+    font-weight: 700;
+    border-radius: 13px;
+    background: linear-gradient(100deg, #6751d8, #9470ed);
+    box-shadow: 0 9px 20px rgba(103, 81, 216, 0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+form > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(103, 81, 216, 0.3);
+}
+
+form > button span {
+    margin-left: 8px;
+}
+
+.result {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #ded8ff;
+    background: #f7f5ff;
+}
+
+.result-label {
+    margin-top: 0;
+}
+
+.translated-text {
+    font-size: 21px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.copy-button {
+    padding: 9px 13px;
+    border-radius: 9px;
+    color: #5f49c9;
+    background: #e9e4ff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.error {
+    padding: 12px 14px;
+    color: #a12636;
+    background: #fff0f1;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.footer {
+    margin: 26px 0 0;
+    color: #9998ad;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .translator-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+}
